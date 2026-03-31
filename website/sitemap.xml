@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://shapeshifters.health/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── Featured / High-RPM Articles ─────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/health-insurance-india-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/second-opinion-cancer-diagnosis-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── National SEO Articles ────────────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/cancer-screening-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/laparoscopic-surgery-recovery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/dermatologist-acne-treatment-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/metformin-side-effects-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/diabetes-diet-plan-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/ozempic-india-semaglutide-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/tretinoin-india-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/thyroid-test-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/blood-pressure-management-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── Doctor-audience Articles ─────────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/diabetes-management-guidelines-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/marrow-neet-pg-review</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/cme-online-india-doctors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── Local SEO — Bangalore ─────────────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/best-dermatologist-bangalore</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-diabetes-specialist-bangalore</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-oncologist-bangalore</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-general-surgeon-bangalore</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── Local SEO — Mumbai ────────────────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/best-diabetes-specialist-mumbai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-oncologist-mumbai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-dermatologist-mumbai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── Local SEO — Hyderabad ─────────────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/best-diabetes-specialist-hyderabad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-oncologist-hyderabad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── Local SEO — Chennai ───────────────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/best-oncologist-chennai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-diabetes-specialist-chennai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+  <!-- ── Local SEO — Delhi ─────────────────────────────── -->
+  <url>
+    <loc>https://shapeshifters.health/best-oncologist-delhi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shapeshifters.health/best-diabetes-specialist-delhi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+
+</urlset>

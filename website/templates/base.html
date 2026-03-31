@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>{% block title %}Shapeshifters Healthcare — India's Medical Education Platform{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Shapeshifters Healthcare — trusted medical education, specialist consultations, and clinical resources for India.{% endblock %}" />
+  <link rel="canonical" href="{{ base_url }}{% block canonical_path %}/{% endblock %}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:title" content="{% block og_title %}Shapeshifters Healthcare{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}Trusted medical education and specialist access for India.{% endblock %}" />
+  <meta property="og:url" content="{{ base_url }}{% block og_url %}/{% endblock %}" />
+  <meta property="og:site_name" content="Shapeshifters Healthcare" />
+  <meta property="og:image" content="{{ base_url }}/static/img/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shapeshifters Healthcare",
+    "url": "{{ base_url }}",
+    "description": "India's trusted medical education, specialist access, and clinical platform.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ base_url }}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  {% block extra_schema %}{% endblock %}
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+
+  <!-- Google Analytics -->
+  <!-- GA_TAG_HERE -->
+
+  <!-- AdSense -->
+  <!-- ADSENSE_SCRIPT_HERE -->
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo" aria-label="Shapeshifters Healthcare Home">
+      <span class="site-logo-text">Shapeshifters<span>Health</span></span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/consult">🩺 Consult</a>
+      <a href="/academy">🎓 Academy</a>
+      <a href="/studios">🎬 Studios</a>
+      <a href="/news">📰 News</a>
+      <a href="/drug-reference">💊 Drug Reference</a>
+      <a href="/consult" class="nav-cta btn">Book Consult</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ── Main Content ────────────────────────────────── -->
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ── Footer ─────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="site-logo-text">Shapeshifters<span style="color:var(--accent)">Health</span></span>
+      <p>India's trusted platform for medical education, specialist consultations, and clinical resources. Serving Bangalore, Mumbai, Hyderabad, Chennai, and Delhi.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Platforms</h4>
+      <ul>
+        <li><a href="/consult">Shapeshifters Consult</a></li>
+        <li><a href="/academy">Shapeshifters Academy</a></li>
+        <li><a href="/studios">Shapeshifters Studios</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Specialties</h4>
+      <ul>
+        <li><a href="/specialty/diabetes">Diabetes</a></li>
+        <li><a href="/specialty/oncology">Oncology</a></li>
+        <li><a href="/specialty/surgery">Surgery</a></li>
+        <li><a href="/specialty/dermatology">Dermatology</a></li>
+        <li><a href="/specialty/general">General Medicine</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Cities</h4>
+      <ul>
+        <li><a href="/city/bangalore">Bangalore</a></li>
+        <li><a href="/city/mumbai">Mumbai</a></li>
+        <li><a href="/city/hyderabad">Hyderabad</a></li>
+        <li><a href="/city/chennai">Chennai</a></li>
+        <li><a href="/city/delhi">Delhi</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>
+      <p class="footer-legal">© 2025 Shapeshifters Healthcare. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="/privacy" style="color:rgba(255,255,255,0.5)">Privacy Policy</a> ·
+        <a href="/terms" style="color:rgba(255,255,255,0.5)">Terms of Use</a> ·
+        <a href="/affiliate-disclosure" style="color:rgba(255,255,255,0.5)">Affiliate Disclosure</a>
+      </p>
+    </div>
+    <div class="footer-disclosure">
+      <strong style="color:rgba(255,255,255,0.6)">Medical Disclaimer:</strong>
+      Content on this site is for educational purposes only. It does not constitute medical advice.
+      Always consult a qualified doctor before making health decisions.
+      <br />
+      <strong style="color:rgba(255,255,255,0.6)">Affiliate Disclosure:</strong>
+      Some links on this site are affiliate links. We may earn a commission at no extra cost to you.
+      Affiliate placements never influence our editorial content or clinical recommendations.
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts — deferred for page speed -->
+<script src="/static/js/main.js" defer></script>
+{% block extra_scripts %}{% endblock %}
+
+</body>
+</html>

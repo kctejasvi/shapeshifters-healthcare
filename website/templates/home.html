@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Shapeshifters Healthcare — Medical Education & Specialist Consultations in India{% endblock %}
+{% block meta_description %}India's trusted medical education platform. Connect with verified specialists in Bangalore, Mumbai, Hyderabad, Chennai and Delhi. Earn CME credits. Trusted drug reference.{% endblock %}
+
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Shapeshifters Healthcare",
+  "url": "{{ base_url }}",
+  "logo": "{{ base_url }}/static/img/logo.png",
+  "sameAs": [
+    "https://t.me/shapeshiftershealthbot"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "url": "{{ base_url }}/consult"
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero ────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <h1>Healthcare Made Trustworthy for India</h1>
+    <p>Specialist consultations · Clinical education for doctors · Verified health information for patients</p>
+    <div class="hero-buttons">
+      <a href="/consult" class="btn btn-primary">🩺 Book a Consultation</a>
+      <a href="/academy" class="btn btn-secondary">🎓 Explore Academy</a>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- ── AdSense top ──────────────────────────────── -->
+  <div class="adsense-slot" data-slot="home-top" aria-hidden="true"></div>
+
+  <!-- ── Specialty Navigation ─────────────────────── -->
+  <section aria-labelledby="specialty-heading" style="margin-top:2.5rem;">
+    <h2 id="specialty-heading" class="section-title">Browse by <span>Specialty</span></h2>
+    <nav class="specialty-nav" aria-label="Medical specialties">
+      <a href="/specialty/diabetes" class="specialty-pill">🩸 Diabetes</a>
+      <a href="/specialty/oncology" class="specialty-pill">🎗️ Oncology</a>
+      <a href="/specialty/surgery" class="specialty-pill">🔪 Surgery</a>
+      <a href="/specialty/dermatology" class="specialty-pill">✨ Dermatology</a>
+      <a href="/specialty/general" class="specialty-pill">❤️ General Medicine</a>
+    </nav>
+  </section>
+
+  <!-- ── City Navigation ──────────────────────────── -->
+  <section aria-labelledby="city-heading" style="margin-top:1.5rem;">
+    <h2 id="city-heading" class="section-title">Find Specialists <span>Near You</span></h2>
+    <nav class="city-nav" aria-label="Cities">
+      <a href="/city/bangalore" class="city-pill">📍 Bangalore</a>
+      <a href="/city/mumbai" class="city-pill">📍 Mumbai</a>
+      <a href="/city/hyderabad" class="city-pill">📍 Hyderabad</a>
+      <a href="/city/chennai" class="city-pill">📍 Chennai</a>
+      <a href="/city/delhi" class="city-pill">📍 Delhi</a>
+    </nav>
+  </section>
+
+  <!-- ── Platform Cards ───────────────────────────── -->
+  <section aria-labelledby="platforms-heading" style="margin-top:2.5rem;">
+    <h2 id="platforms-heading" class="section-title">Three Ways We <span>Help You</span></h2>
+    <div class="articles-grid">
+      <div class="article-card">
+        <div class="card-body">
+          <p class="card-tag" style="font-size:1.5rem;">🩺</p>
+          <h3 class="card-title">Shapeshifters Consult</h3>
+          <p class="card-excerpt">Connect with verified specialists in 5 cities. Same-day online and in-person appointments.</p>
+          <a href="/consult" class="btn btn-accent" style="margin-top:1rem;display:inline-block;">Book Now →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="card-body">
+          <p class="card-tag" style="font-size:1.5rem;">🎓</p>
+          <h3 class="card-title">Shapeshifters Academy</h3>
+          <p class="card-excerpt">CME courses for working doctors. NMC-recognised. Clinical guidelines, case studies, NEET PG prep.</p>
+          <a href="/academy" class="btn btn-accent" style="margin-top:1rem;display:inline-block;">Explore Courses →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="card-body">
+          <p class="card-tag" style="font-size:1.5rem;">🎬</p>
+          <h3 class="card-title">Shapeshifters Studios</h3>
+          <p class="card-excerpt">Expert-led clinical video modules. Earn CME credits while watching from anywhere in India.</p>
+          <a href="/studios" class="btn btn-accent" style="margin-top:1rem;display:inline-block;">Watch Videos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Featured Articles ─────────────────────────── -->
+  <section aria-labelledby="featured-heading" style="margin-top:2.5rem;">
+    <h2 id="featured-heading" class="section-title">Featured <span>Articles</span></h2>
+    <div class="articles-grid">
+      {% for article in featured_articles %}
+      <div class="article-card">
+        <div class="card-body" style="position:relative;">
+          <p class="card-tag">{{ article.specialty | title }}{% if article.city %} · {{ article.city }}{% endif %}</p>
+          <h3 class="card-title">
+            <a href="/{{ article.slug }}" class="card-link">{{ article.title }}</a>
+          </h3>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="/articles" class="btn btn-primary" style="background:var(--primary);color:#fff;">View All Articles →</a>
+    </div>
+  </section>
+
+  <!-- ── AdSense mid ───────────────────────────────── -->
+  <div class="adsense-slot" data-slot="home-mid" aria-hidden="true"></div>
+
+  <!-- ── Latest Medical News ──────────────────────── -->
+  <section aria-labelledby="news-heading" style="margin-top:2.5rem;">
+    <h2 id="news-heading" class="section-title">Latest Medical <span>News</span></h2>
+    {% for item in news %}
+    <div class="news-item">
+      <p class="news-source">{{ item.source }}</p>
+      <h3 class="news-title">{{ item.title }}</h3>
+      <p class="news-summary">{{ item.summary }}</p>
+      <p class="news-date">📅 {{ item.date }}</p>
+    </div>
+    {% endfor %}
+    <div style="margin-top:1rem;">
+      <a href="/news" class="btn btn-primary" style="background:var(--primary);color:#fff;font-size:0.9rem;padding:0.55rem 1.25rem;">More Medical News →</a>
+    </div>
+  </section>
+
+  <!-- ── Telegram bot CTA ─────────────────────────── -->
+  <section style="margin:3rem 0;">
+    <div class="ss-cta-box">
+      <h3>📱 Get Health Tips on Telegram</h3>
+      <p>Daily health tips, drug reference, myth-busting, and specialist Q&A — all on Telegram. Free.</p>
+      <a href="https://t.me/shapeshiftershealthbot" class="btn btn-accent" target="_blank" rel="noopener">
+        Open in Telegram →
+      </a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

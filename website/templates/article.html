@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} | Shapeshifters Healthcare{% endblock %}
+{% block meta_description %}{{ article.meta_description }}{% endblock %}
+{% block canonical_path %}/{{ article.slug }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_title %}{{ article.title }}{% endblock %}
+{% block og_description %}{{ article.meta_description }}{% endblock %}
+{% block og_url %}/{{ article.slug }}{% endblock %}
+
+{% block extra_schema %}
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ article.title }}",
+  "description": "{{ article.meta_description }}",
+  "url": "{{ base_url }}/{{ article.slug }}",
+  "datePublished": "{{ article.date_published }}",
+  "dateModified": "{{ article.date_modified }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Shapeshifters Editorial Team",
+    "url": "{{ base_url }}/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shapeshifters Healthcare",
+    "url": "{{ base_url }}"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ base_url }}/{{ article.slug }}"
+  }
+}
+</script>
+
+{% if article.faq %}
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in article.faq %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.answer }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if article.city %}
+<!-- LocalBusiness Schema for local SEO articles -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Shapeshifters Consult — {{ article.city }}",
+  "url": "{{ base_url }}/consult",
+  "areaServed": {
+    "@type": "City",
+    "name": "{{ article.city }}"
+  },
+  "medicalSpecialty": "{{ article.specialty | title }}"
+}
+</script>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" style="font-size:0.8rem;color:var(--text-light);padding:1rem 0 0;">
+    <a href="/">Home</a> ›
+    {% if article.city %}<a href="/city/{{ article.city | lower }}">{{ article.city }}</a> ›{% endif %}
+    <a href="/specialty/{{ article.specialty }}">{{ article.specialty | title }}</a> ›
+    <span>{{ article.title }}</span>
+  </nav>
+
+  <div class="page-layout">
+
+    <!-- ── Main Article ──────────────────────────── -->
+    <article class="main-content">
+
+      <!-- AdSense — above fold -->
+      <div class="adsense-slot" data-slot="article-top" aria-hidden="true"></div>
+
+      <!-- Article header -->
+      <header class="article-header">
+        <span class="article-tag">{{ article.specialty | title }}</span>
+        <h1>{{ article.title }}</h1>
+        <div class="article-meta">
+          <span>✍️ Reviewed by <strong>Shapeshifters Editorial Team</strong></span>
+          <span>📅 Updated {{ article.date_modified }}</span>
+          {% if article.city %}<span>📍 {{ article.city }}</span>{% endif %}
+        </div>
+      </header>
+
+      <!-- Medical disclaimer -->
+      <div class="disclaimer-box">
+        <strong>⚕️ Medical Disclaimer</strong>
+        This article is for educational purposes only and does not constitute medical advice.
+        Always consult a qualified doctor before making any health decisions.
+      </div>
+
+      <!-- Table of Contents -->
+      <nav class="toc" aria-label="Table of contents">
+        <p class="toc-title">📋 In This Article</p>
+        <ol id="toc-list">
+          <!-- Auto-populated by main.js -->
+        </ol>
+      </nav>
+
+      <!-- Article body -->
+      <div class="prose">
+        {{ article.content | safe }}
+      </div>
+
+      <!-- AdSense — end of article -->
+      <div class="adsense-slot" data-slot="article-end" aria-hidden="true"></div>
+
+      <!-- Social share -->
+      <div class="share-bar">
+        <span class="share-bar-label">Share:</span>
+        <a href="https://wa.me/?text={{ article.title | urlencode }}%20{{ base_url }}/{{ article.slug }}"
+           class="share-btn share-wa" target="_blank" rel="noopener">
+          💬 WhatsApp
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ base_url }}/{{ article.slug }}"
+           class="share-btn share-li" target="_blank" rel="noopener">
+          🔗 LinkedIn
+        </a>
+        <a href="https://twitter.com/intent/tweet?text={{ article.title | urlencode }}&url={{ base_url }}/{{ article.slug }}"
+           class="share-btn share-tw" target="_blank" rel="noopener">
+          🐦 Twitter/X
+        </a>
+      </div>
+
+      <!-- Shapeshifters CTA -->
+      {% if article.audience == 'patient' %}
+      <div class="ss-cta-box">
+        <h3>Need a Specialist?</h3>
+        <p>Connect with a verified {{ article.specialty | title }} specialist online. Same-day appointments available across India.</p>
+        <a href="/consult" class="btn btn-accent">Book a Consultation →</a>
+      </div>
+      {% elif article.audience == 'doctor' %}
+      <div class="ss-cta-box">
+        <h3>Earn CME Credits Online</h3>
+        <p>Structured clinical courses for working doctors. NMC-recognised. From ₹799.</p>
+        <a href="/academy" class="btn btn-accent">Explore Shapeshifters Academy →</a>
+      </div>
+      {% endif %}
+
+      <!-- Related articles -->
+      {% if related_articles %}
+      <section aria-labelledby="related-heading" style="margin-top:2.5rem;">
+        <h2 id="related-heading">Related Articles</h2>
+        <div class="articles-grid">
+          {% for rel in related_articles %}
+          <div class="article-card">
+            <div class="card-body">
+              <p class="card-tag">{{ rel.specialty | title }}</p>
+              <h3 class="card-title"><a href="/{{ rel.slug }}" class="card-link">{{ rel.title }}</a></h3>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+    </article>
+
+    <!-- ── Sidebar ───────────────────────────────── -->
+    <aside class="sidebar" aria-label="Sidebar">
+
+      <!-- Latest articles widget -->
+      <div class="sidebar-widget">
+        <p class="sidebar-widget-title">Latest Articles</p>
+        {% for a in sidebar_articles %}
+        <a class="related-article-link" href="/{{ a.slug }}">
+          <span class="related-tag">{{ a.specialty | title }}</span>
+          {{ a.title }}
+        </a>
+        {% endfor %}
+      </div>
+
+      <!-- Consult CTA -->
+      <div class="affiliate-box" style="background:#eff6ff;border-color:#bfdbfe;">
+        <p class="affiliate-label" style="color:#1d4ed8;">🩺 Shapeshifters Consult</p>
+        <a href="/consult" class="affiliate-cta" style="background:#1d4ed8;">
+          Book a specialist consultation →
+        </a>
+      </div>
+
+      <!-- Sidebar affiliates -->
+      {% if sidebar_affiliates %}
+      {% for aff in sidebar_affiliates %}
+      <div class="affiliate-box">
+        <p class="affiliate-label">📋 Sponsored</p>
+        <a href="{{ aff.link }}" class="affiliate-cta" target="_blank" rel="sponsored noopener">
+          {{ aff.copy }}
+        </a>
+      </div>
+      {% endfor %}
+      {% endif %}
+
+      <!-- AdSense sidebar -->
+      <div class="adsense-slot" data-slot="sidebar" aria-hidden="true"></div>
+
+    </aside>
+  </div>
+</div>
+{% endblock %}
